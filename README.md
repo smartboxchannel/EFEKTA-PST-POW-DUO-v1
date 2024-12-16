@@ -1,0 +1,1 @@
+# EFEKTA-PST-POW-DUO-v1
