@@ -1,9 +1,9 @@
 {
-  "name": "Датчик давления EFEKTA PST POW V1",
+  "name": "Датчик EFEKTA PST POW DUO",
   "manufacturer": "EfektaLab",
-  "model": "EFEKTA_PST_POW_V1_LR",
+  "model": "EFEKTA_PST_POW_DUO_V1_LR",
   "manufacturerId": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
-  "modelId": "EFEKTA_PST_POW_V1_LR",
+  "modelId": "EFEKTA_PST_POW_DUO_V1_LR",
   "catalogId": -1,
   "status": "Test",
   "template": "/_Battery/BatteryPercentageRemaining.json",
