@@ -209,36 +209,26 @@
   ],
   "services": [
 	{
-	  "name": "Датчик давления воды",
+      "name": "Датчик давления воды 1",
       "type": "C_AtmosphericPressureSensor",
       "characteristics": [
         {
           "type": "C_CurrentAtmosphericPressure",
+          "unit": "Bar",
+          "minStep": 0.01,
+          "maxValue": 10.0,
           "link": {
-            "endpoint": 1,
-            "cluster": "0403_PressureMeasurement",
-            "attribute": "0000_MeasuredValue"
-          }
-        }
-      ]
-    },
-	{
-	  "name": "Датчик давления воды",
-      "type": "C_AtmosphericPressureSensor",
-      "characteristics": [
-        {
-          "type": "C_CurrentAtmosphericPressure",
-          "link": {
+            "type": "Double",
             "endpoint": 1,
             "cluster": "0403_PressureMeasurement",
             "attribute": "0000_MeasuredValue",
-            "write": false,
             "inFunc": "value*0.00133322"
           }
         }
       ]
     },
 	{
+      "name": "Датчик температуры 1",
       "type": "TemperatureSensor",
       "characteristics": [
         {
@@ -252,36 +242,26 @@
       ]
     },
 	{
-	  "name": "Датчик давления воды",
+      "name": "Датчик давления воды 2",
       "type": "C_AtmosphericPressureSensor",
       "characteristics": [
         {
           "type": "C_CurrentAtmosphericPressure",
+          "unit": "Bar",
+          "minStep": 0.01,
+          "maxValue": 10.0,
           "link": {
-            "endpoint": 2,
-            "cluster": "0403_PressureMeasurement",
-            "attribute": "0000_MeasuredValue"
-          }
-        }
-      ]
-    },
-	{
-	  "name": "Датчик давления воды",
-      "type": "C_AtmosphericPressureSensor",
-      "characteristics": [
-        {
-          "type": "C_CurrentAtmosphericPressure",
-          "link": {
+            "type": "Double",
             "endpoint": 2,
             "cluster": "0403_PressureMeasurement",
             "attribute": "0000_MeasuredValue",
-            "write": false,
             "inFunc": "value*0.00133322"
           }
         }
       ]
     },
 	{
+      "name": "Датчик температуры 2",
       "type": "TemperatureSensor",
       "characteristics": [
         {
@@ -319,11 +299,11 @@
         },
         "name": "Время работы устройства",
         "type": "Integer",
-		"unit": "час",
+        "unit": "час",
         "init": false,
         "write": false,
         "input": "status",
-		"value": 0
+        "value": 0
     },
 	{
         "link": {
@@ -333,7 +313,7 @@
         },
         "name": "Интервал чтения сенсоров, в секундах",
         "type": "Integer",
-		"unit": "сек.",
+        "unit": "сек.",
         "init": false,
         "value": 30,
         "minValue": 10,
@@ -347,7 +327,7 @@
         "attribute": "0236_Custom"
       },
       "name": "Мощность радио передатчика",
-	  "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при можности 4dbm потребление 50mA",
+      "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при можности 4dbm потребление 50mA",
       "type": "Integer",
       "init": false,
       "value": 19,
@@ -369,7 +349,7 @@
           "attribute": "0216_Custom"
         },
         "name": "Режим работы датчика с опросом (умный сон)",
-	    "description": "Пробуждение датчика раз в 2-7 секунд для приёма данных от хаба, в данном режиме увеличивается энергопотребление",
+        "description": "Пробуждение датчика раз в 2-7 секунд для приёма данных от хаба, в данном режиме увеличивается энергопотребление",
         "type": "Boolean",
         "init": false,
         "value": true
@@ -381,7 +361,7 @@
           "attribute": "0275_Custom"
         },
         "name": "Режим работы датчика по сконфигурированным отчетам",
-	    "description": "Отправка данных происходит в соответствии с настройками в разделе Уведомления",
+        "description": "Отправка данных происходит в соответствии с настройками в разделе Уведомления",
         "type": "Boolean",
         "init": false,
         "value": true
