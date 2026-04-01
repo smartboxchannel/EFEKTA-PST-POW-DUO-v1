@@ -2,63 +2,69 @@
   "name": "Датчик EFEKTA PST POW DUO",
   "manufacturer": "EfektaLab",
   "model": "EFEKTA_PST_POW_DUO_V1_LR",
-  "manufacturerId": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
-  "modelId": "EFEKTA_PST_POW_DUO_V1_LR",
-  "catalogId": -1,
-  "status": "Test",
-  "template": "/_Battery/BatteryPercentageRemaining.json",
+  "manufacturerIds": [
+    "EfektaLab",
+    "EfektaLab_for_Zigbee-Shop.ru"
+  ],
+  "modelIds": [
+    "EFEKTA_PST_POW_DUO_V1_LR"
+  ],
+  "catalogId": 0,
+  "template": [
+    "/_Battery/BatteryPercentageRemaining.json"
+  ],
   "init": [
-  {
+    {
       "zcl": [
-	    {
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0201_Custom",
           "zclDataType": "UNSIGNED_16_BIT_INTEGER"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0275_Custom",
           "zclDataType": "BOOLEAN"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0205_Custom",
           "zclDataType": "BOOLEAN"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0216_Custom",
           "zclDataType": "BOOLEAN"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0236_Custom",
           "zclDataType": "SIGNED_8_BIT_INTEGER"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0403_PressureMeasurement",
           "attribute": "0210_Custom",
           "zclDataType": "SIGNED_16_BIT_INTEGER"
         },
-		{
+        {
           "endpoint": 2,
           "cluster": "0403_PressureMeasurement",
           "attribute": "0210_Custom",
           "zclDataType": "SIGNED_16_BIT_INTEGER"
         },
-		{
+        {
           "endpoint": 1,
           "cluster": "0402_TemperatureMeasurement",
           "attribute": "0008_Custom",
           "zclDataType": "SIGNED_16_BIT_INTEGER"
         },
-		{
+        {
           "endpoint": 2,
           "cluster": "0402_TemperatureMeasurement",
           "attribute": "0008_Custom",
@@ -66,141 +72,165 @@
         }
       ]
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "000A_Time",
-        "attribute": "0007_LocalTime"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "000A_Time",
+          "attribute": "0007_LocalTime"
+        }
+      ],
       "bind": false,
-	  "report": false
+      "report": false
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
-		  "attribute": "0000_MainsVoltage"
-        },
-        "bind": true,
-        "report": false
+          "attribute": "0000_MainsVoltage"
+        }
+      ],
+      "bind": true,
+      "report": false
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0021_BatteryPercentageRemaining"
-        },
-        "bind": true,
-        "report": {
-          "min": 1800,
-          "max": 43200,
-          "change": 1
         }
+      ],
+      "bind": true,
+      "report": {
+        "min": 1800,
+        "max": 43200,
+        "change": 1
+      }
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
-		  "attribute": "003E_BatteryAlarmState"
-        },
-        "bind": true,
-        "report": {
-          "min": 1800,
-          "max": 43200,
-          "change": 1
+          "attribute": "003E_BatteryAlarmState"
         }
+      ],
+      "bind": true,
+      "report": {
+        "min": 1800,
+        "max": 43200,
+        "change": 1
+      }
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0403_PressureMeasurement",
-        "attribute": "0000_MeasuredValue"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0403_PressureMeasurement",
+          "attribute": "0000_MeasuredValue"
+        }
+      ],
       "bind": true,
       "report": {
         "min": 20,
         "max": 600,
         "change": 1
-	  }
+      }
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0402_TemperatureMeasurement",
-        "attribute": "0000_MeasuredValue"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0000_MeasuredValue"
+        }
+      ],
       "bind": true,
       "report": {
         "min": 30,
         "max": 900,
         "change": 15
-	  }
+      }
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0403_PressureMeasurement",
-        "attribute": "0000_MeasuredValue"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0403_PressureMeasurement",
+          "attribute": "0000_MeasuredValue"
+        }
+      ],
       "bind": true,
       "report": {
         "min": 20,
         "max": 600,
         "change": 1
-	  }
+      }
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0402_TemperatureMeasurement",
-        "attribute": "0000_MeasuredValue"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0000_MeasuredValue"
+        }
+      ],
       "bind": true,
       "report": {
         "min": 30,
         "max": 900,
         "change": 15
-	  }
+      }
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0403_PressureMeasurement",
-        "output": true
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0403_PressureMeasurement",
+          "output": true
+        }
+      ],
       "name": "Прямая передача данных давления газа/жидкости на другое устройство",
       "description": "Привязка к другому устройству по данным давления газа/жидкости, для прямой передачи данных на другое устройство.",
       "type": "String",
       "bind": true
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0402_TemperatureMeasurement",
-        "output": true
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0402_TemperatureMeasurement",
+          "output": true
+        }
+      ],
       "name": "Прямая передача данных температуры на другое устройство",
       "description": "Привязка к другому устройству по данным температуры, для прямой передачи данных на другое устройство.",
       "type": "String",
       "bind": true
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0403_PressureMeasurement",
-        "output": true
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0403_PressureMeasurement",
+          "output": true
+        }
+      ],
       "name": "Прямая передача данных давления газа/жидкости на другое устройство",
       "description": "Привязка к другому устройству по данным давления газа/жидкости, для прямой передачи данных на другое устройство.",
       "type": "String",
       "bind": true
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0402_TemperatureMeasurement",
-        "output": true
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0402_TemperatureMeasurement",
+          "output": true
+        }
+      ],
       "name": "Прямая передача данных температуры на другое устройство",
       "description": "Привязка к другому устройству по данным температуры, для прямой передачи данных на другое устройство.",
       "type": "String",
@@ -208,7 +238,7 @@
     }
   ],
   "services": [
-	{
+    {
       "name": "Датчик давления воды 1",
       "type": "C_AtmosphericPressureSensor",
       "characteristics": [
@@ -216,32 +246,36 @@
           "type": "C_CurrentAtmosphericPressure",
           "unit": "Bar",
           "minStep": 0.01,
-          "maxValue": 10.0,
-          "link": {
-            "type": "Double",
-            "endpoint": 1,
-            "cluster": "0403_PressureMeasurement",
-            "attribute": "0000_MeasuredValue",
-            "inFunc": "value*0.00133322"
-          }
+          "maxValue": 10,
+          "link": [
+            {
+              "type": "Double",
+              "endpoint": 1,
+              "cluster": "0403_PressureMeasurement",
+              "attribute": "0000_MeasuredValue",
+              "inFunc": "value*0.00133322"
+            }
+          ]
         }
       ]
     },
-	{
+    {
       "name": "Датчик температуры 1",
       "type": "TemperatureSensor",
       "characteristics": [
         {
           "type": "CurrentTemperature",
-          "link": {
-            "endpoint": 1,
-            "cluster": "0402_TemperatureMeasurement",
-            "attribute": "0000_MeasuredValue"
-          }
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "0402_TemperatureMeasurement",
+              "attribute": "0000_MeasuredValue"
+            }
+          ]
         }
       ]
     },
-	{
+    {
       "name": "Датчик давления воды 2",
       "type": "C_AtmosphericPressureSensor",
       "characteristics": [
@@ -249,87 +283,96 @@
           "type": "C_CurrentAtmosphericPressure",
           "unit": "Bar",
           "minStep": 0.01,
-          "maxValue": 10.0,
-          "link": {
-            "type": "Double",
-            "endpoint": 2,
-            "cluster": "0403_PressureMeasurement",
-            "attribute": "0000_MeasuredValue",
-            "inFunc": "value*0.00133322"
-          }
+          "maxValue": 10,
+          "link": [
+            {
+              "type": "Double",
+              "endpoint": 2,
+              "cluster": "0403_PressureMeasurement",
+              "attribute": "0000_MeasuredValue",
+              "inFunc": "value*0.00133322"
+            }
+          ]
         }
       ]
     },
-	{
+    {
       "name": "Датчик температуры 2",
       "type": "TemperatureSensor",
       "characteristics": [
         {
           "type": "CurrentTemperature",
-          "link": {
-            "endpoint": 2,
-            "cluster": "0402_TemperatureMeasurement",
-            "attribute": "0000_MeasuredValue"
-          }
+          "link": [
+            {
+              "endpoint": 2,
+              "cluster": "0402_TemperatureMeasurement",
+              "attribute": "0000_MeasuredValue"
+            }
+          ]
         }
       ]
     },
-	{
-	  "name": "Mains voltage",
+    {
+      "name": "Mains voltage",
       "type": "C_VoltMeter",
       "characteristics": [
         {
           "type": "C_Volt",
-          "link": {
-            "endpoint": 1,
-            "cluster": "0001_PowerConfiguration",
-            "attribute": "0000_MainsVoltage",
-			"inFunc": "value*0.1"
-          }
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "0001_PowerConfiguration",
+              "attribute": "0000_MainsVoltage",
+              "inFunc": "value*0.1"
+            }
+          ]
         }
       ]
     }
   ],
   "options": [
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "000A_Time",
           "attribute": "0007_LocalTime"
-        },
-        "name": "Время работы устройства",
-        "type": "Integer",
-        "unit": "час",
-        "init": false,
-        "write": false,
-        "input": "status",
-        "value": 0
+        }
+      ],
+      "name": "Время работы устройства",
+      "type": "Integer",
+      "unit": "час",
+      "write": false,
+      "value": 0,
+      "inputType": "STATUS"
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0201_Custom"
-        },
-        "name": "Интервал чтения сенсоров, в секундах",
-        "type": "Integer",
-        "unit": "сек.",
-        "init": false,
-        "value": 30,
-        "minValue": 10,
-        "maxValue": 3600,
-        "minStep": 1
+        }
+      ],
+      "name": "Интервал чтения сенсоров, в секундах",
+      "type": "Integer",
+      "unit": "сек.",
+      "value": 30,
+      "minValue": 10,
+      "maxValue": 3600,
+      "minStep": 1
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0001_PowerConfiguration",
-        "attribute": "0236_Custom"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0236_Custom"
+        }
+      ],
       "name": "Мощность радио передатчика",
       "description": "Чем выше мощность, тем выше энергопотребление, на максимальной мощности в 19dbm, потребление 100mA при передаче, при можности 4dbm потребление 50mA",
       "type": "Integer",
-      "init": false,
       "value": 19,
       "values": [
         {
@@ -342,95 +385,102 @@
         }
       ]
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0216_Custom"
-        },
-        "name": "Режим работы датчика с опросом (умный сон)",
-        "description": "Пробуждение датчика раз в 2-7 секунд для приёма данных от хаба, в данном режиме увеличивается энергопотребление",
-        "type": "Boolean",
-        "init": false,
-        "value": true
+        }
+      ],
+      "name": "Режим работы датчика с опросом (умный сон)",
+      "description": "Пробуждение датчика раз в 2-7 секунд для приёма данных от хаба, в данном режиме увеличивается энергопотребление",
+      "type": "Boolean",
+      "value": true
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0275_Custom"
-        },
-        "name": "Режим работы датчика по сконфигурированным отчетам",
-        "description": "Отправка данных происходит в соответствии с настройками в разделе Уведомления",
-        "type": "Boolean",
-        "init": false,
-        "value": true
+        }
+      ],
+      "name": "Режим работы датчика по сконфигурированным отчетам",
+      "description": "Отправка данных происходит в соответствии с настройками в разделе Уведомления",
+      "type": "Boolean",
+      "value": true
     },
-	{
-        "link": {
+    {
+      "link": [
+        {
           "endpoint": 1,
           "cluster": "0001_PowerConfiguration",
           "attribute": "0205_Custom"
-        },
-        "name": "Сравнение данных с предыдущими, работы датчика в режиме по таймеру",
-	    "description": "Игнорирует настройки в разделе Уведомления и отправляет данные по пробуждению, сравнивая их с предыдущими, по порогам заданным в ПО (температура 0.25°C, влажность воздуха 0.5%)",
-        "type": "Boolean",
-        "init": false,
-        "value": false
+        }
+      ],
+      "name": "Сравнение данных с предыдущими, работы датчика в режиме по таймеру",
+      "description": "Игнорирует настройки в разделе Уведомления и отправляет данные по пробуждению, сравнивая их с предыдущими, по порогам заданным в ПО (температура 0.25°C, влажность воздуха 0.5%)",
+      "type": "Boolean",
+      "value": false
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0403_PressureMeasurement",
-        "attribute": "0210_Custom"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0403_PressureMeasurement",
+          "attribute": "0210_Custom"
+        }
+      ],
       "name": "Корректировка давления первого сенсора",
       "type": "Integer",
-      "init": false,
       "value": 0,
       "minValue": -100,
       "maxValue": 100,
       "minStep": 1
     },
-	{
-      "link": {
-        "endpoint": 1,
-        "cluster": "0402_TemperatureMeasurement",
-        "attribute": "0008_Custom"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0008_Custom"
+        }
+      ],
       "name": "Корректировка температуры RAW первого сенсора",
-	  "description": "Сдвиг необработанного значения температуры первого сенсора",
+      "description": "Сдвиг необработанного значения температуры первого сенсора",
       "type": "Integer",
-      "init": false,
       "value": 0,
       "minValue": -8192,
       "maxValue": 8192,
       "minStep": 1
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0403_PressureMeasurement",
-        "attribute": "0210_Custom"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0403_PressureMeasurement",
+          "attribute": "0210_Custom"
+        }
+      ],
       "name": "Корректировка давления второго сенсора",
       "type": "Integer",
-      "init": false,
       "value": 0,
       "minValue": -100,
       "maxValue": 100,
       "minStep": 1
     },
-	{
-      "link": {
-        "endpoint": 2,
-        "cluster": "0402_TemperatureMeasurement",
-        "attribute": "0008_Custom"
-      },
+    {
+      "link": [
+        {
+          "endpoint": 2,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0008_Custom"
+        }
+      ],
       "name": "Корректировка температуры RAW второго сенсора",
-	  "description": "Сдвиг необработанного значения температуры второго сенсора",
+      "description": "Сдвиг необработанного значения температуры второго сенсора",
       "type": "Integer",
-      "init": false,
       "value": 0,
       "minValue": -8192,
       "maxValue": 8192,
